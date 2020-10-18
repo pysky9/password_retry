@@ -6,18 +6,16 @@
 # 如果不正確 就印出 "密碼錯誤!還有__次機會"
 
 password = 'a123456'
-i = 1
-while i < 4:
+i = 3
+while i > 0 :
+	i = i - 1  # 剩餘機會
 	pwd = input("請輸入密碼: ")
 	if pwd == password:
 		print("登入成功")
 		break
 	else :
-		times = 3 - i
-		if times == 0:
-			break
-		else:
-			print(f"密碼錯誤!還有{times}次機會")
-		i += 1
-		if i == 4 :
-			break
+		print("密碼錯誤")
+		if i > 0 :
+			print(f"還有{i}次機會")
+		else :
+			print("帳號已封鎖")
